@@ -38,6 +38,12 @@ of the output files, and  the number of CPUs for parallel computing.
 In a bash shell:
 nohup python3 xibetagenomicpointspython.py &
 
+
+When running the Kingman(beta)-coalescent the  python script {eggenomicpointspython.py} should be applied, since  the grid of parameter values
+for the growth parameter beta is differs from the one for the alpha parameter of the Beta(2-alpha,alpha)-coalescent. The script is configured to
+run parallel computations.   In a bash shell:
+nohup python3 eggenomicpointspython.py &
+
 The output of  {xibetagenomicpointspython.py} can be processed with  {reiknamlegenomic.py}, which reads in  actual datapoints, and  the names 
 of the files containing simulated datapoints.  For each actual datapoint, the  files containing the simulated datapoints are read in,  and the density 
 is evaluated corresponding to the  parameter values associated with each file in turn.  The output is the average  maximum likelihood estimate of 
