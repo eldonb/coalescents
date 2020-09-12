@@ -44,5 +44,10 @@ is evaluated corresponding to the  parameter values associated with each file in
 the parameters, the standard deviation, and  the average maximum log-likelihood.   
 
 For a single actual datapoint, the  python script  {reiknamlegenomicsp.py} can be applied.   
+
+The file {genomiccredobjects.R} can be applied to the simulated datapoints to  compute credible regions using the function ci2d as part of 
+R package gplots.  First the datapoints need to be  read into one file, which is then  read by the script.  
+The script can be run from the command line (in bash shell) using Rscript:
+Rscript genomiccredobjects.R
  
 
