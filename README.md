@@ -13,7 +13,7 @@ and the number of available CPUs,
 the simulations can take a while, easily several days.  
 
 # 1. System requirements
-The main requirements are  a  C++ compiler (e.g. g++ version 8.3.0),  Python version 3.7.3,   GSL (GNU Scientific Library) version 2.5, and the Boost C++ library. 
+The main requirements are  a  C++ compiler (e.g. g++ version 8.3.0),  Python version 3.7.3,   GSL (GNU Scientific Library) version 2.5, the Boost C++ library, and R version 3.6.3 or later.
 
 The code compiles successfully on a Linux Debian 4.19.0-10-amd64 x86-64 architecture. 
 No non-standard hardware is required.
