@@ -1,6 +1,7 @@
 Description for running the  scripts,  and  some examples and further details.
 
 # 1. Lambda-coalescents
+
 The file  {clambdabetapython.cpp}  contains C++ code for  simulating datapoints under  a Lambda-variant of the Beta(2-a,a) coalescent (Schweinsberg, 2003), 
 and under the Kingman-coalescent, and a time-changed variant of the Kingman coalescent corresponding to exponential population growth in a haploid population  evolving
 evolving according to the Wright-Fisher model. These models would  be appropriate for  analysing population genetic mtDNA data. 
@@ -18,3 +19,22 @@ which will simulate datapoints  for each combination of parameter values (a,h), 
 for further processing.   The python script is configured to run parallel simulations on computers with multiple CPUs.  
 
 # 2. Genomic coalescents
+
+The file {xibetagenomicpython.cpp} contains C++ code for simulating  a genomic Beta(2-a,a) coalescent, or a  genomic Kingman-coalescent, and a time-changed 
+variantof the Kingman-coalescent  representing exponential population growth in a diploid population evolving according to the Wright-Fisher model.   
+A genomic coalescent is  a  coalescent process tracing the ancestral trees of  many chromosomes, or equivalently (in our case)  many unlinked  loci.  
+Here it is assumed we are jointly  tracing the ancestral trees of many unlinked loci, where each locus  is a non-recombining contiguous segment of a
+chromosome.   The output is summary statistics of the site-frequency spectrum, which can be further processed for comparison with actual data.  
+
+The code in {xibetagenomicpython.cpp} is called from a python script, hence should be compiled with
+g++ -Wall -fPIC -shared -o xibetagenomicpython.so xibetagenomicpython.cpp -lm -lgsl -lgslcblas
+
+The shared library {xibetagenomicpython.so} can be called from the python script {xibetagenomicpointspython.py}, which is 
+configured to run simulations in parallel on computers with at least two CPUs. The python script writes the output to files, 
+and the files are labelled with  the corresponding parameter values (a,h), where  a is the alpha parameter of the Beta(2-a,a)-coalescent,
+or the growth parameter beta of the Kingman(beta)-coalescent, the time-changed variant (beta=0 is the classical Kingman-coalescent), and 
+h is the scaled mutation parameter (theta).  In the python script one can configure the  number  of trials,  the parameter grids, the  prefix
+of the output files, and  the number of CPUs for parallel computing.
+In a bash shell:
+nohup python3 xibetagenomicpointspython.py &
+
