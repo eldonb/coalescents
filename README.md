@@ -8,7 +8,7 @@ The scripts are part of a manuscript currently undergoing peer-review.  Citation
 
 The  example file codexample.sfs  contains  examples for compiling and  running the code and   generating  simulated datapoints and comparing them to  data.
 
-Note that  depending on the number of  points in the grid of parameter values,  the simulations can take a while, easily several days.  
+Depending on the number of  points in the grid of parameter values,  the simulations can take a while, easily several days.  
 
 # 1. System requirements
 The main requirements are  a  C++ compiler (e.g. g++ version 8.3.0),  Python version 3.7.3,   GSL (GNU Scientific Library) version 2.5, and the Boost C++ library. 
@@ -30,4 +30,4 @@ number of available CPUs.  Running time can, therefore, take from a few minutes 
 
 # 4. Instructions for use
 The file codexample.sfs contains instructions for compiling and running the scripts, and for reproducing the output. 
-However,  the running time for the  results in the manuscript was many days on a powerful computer with  67 CPUs.
+However,  the running time for the  results in the manuscript was many days on a powerful computer with  64 CPUs.
