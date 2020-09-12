@@ -6,7 +6,7 @@ The scripts are part of a manuscript currently undergoing peer-review.  Citation
 
 # Example
 
-The cod example file codexample.sfs  contains  examples for compiling and  running the code and   generating  simulated datapoints and comparing them to  data.
+The  example file codexample.sfs  contains  examples for compiling and  running the code and   generating  simulated datapoints and comparing them to  data.
 
 Note that  depending on the number of  points in the grid of parameter values,  the simulations can take a while, easily several days.  
 
