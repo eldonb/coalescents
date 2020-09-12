@@ -38,3 +38,11 @@ of the output files, and  the number of CPUs for parallel computing.
 In a bash shell:
 nohup python3 xibetagenomicpointspython.py &
 
+The output of  {xibetagenomicpointspython.py} can be processed with  {reiknamlegenomic.py}, which reads in  actual datapoints, and  the names 
+of the files containing simulated datapoints.  For each actual datapoint, the  files containing the simulated datapoints are read in,  and the density 
+is evaluated corresponding to the  parameter values associated with each file in turn.  The output is the average  maximum likelihood estimate of 
+the parameters, the standard deviation, and  the average maximum log-likelihood.   
+
+For a single actual datapoint, the  python script  {reiknamlegenomicsp.py} can be applied.   
+ 
+
