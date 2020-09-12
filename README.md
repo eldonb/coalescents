@@ -30,4 +30,4 @@ number of available CPUs.  Running time can, therefore, take from a few minutes 
 
 # 4. Instructions for use
 The file codexample.sfs contains instructions for compiling and running the scripts, and for reproducing the output. 
-However,  the running time for the  results in the manuscript took many days. 
+However,  the running time for the  results in the manuscript was many days on a powerful computer with  67 CPUs.
