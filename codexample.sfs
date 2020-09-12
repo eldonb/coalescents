@@ -1,0 +1,17 @@
+Description for running the  scripts,  and  some examples and further details.
+
+The file  clambdabetapython.cpp  contains C++ code for  simulating datapoints under  a Lambda-variant of the Beta(2-a,a) coalescent (Schweinsberg, 2003), 
+and under the Kingman-coalescent, and a time-changed variant corresponding to exponential population growth in a haploid population  evolving
+according to the Wright-Fisher model. These models would  be appropriate for  analysing population genetic mtDNA data. 
+Note that the code only works with the coalescent objects, there is no rescaling of time to generations involved.  
+
+The C++ code (requires the boost library) is called from a python script, hence we compile as
+g++ -Wall -fPIC -shared  -o clambda.so clambdabetapython.cpp 
+
+Call the shared library (clambda.so) from the python script clambdapoints.py, from bash:
+nohup python3 clambdapoints.py &
+
+which will simulate datapoints  for each combination of parameter values (a,h), where a is the  alpha parameter of the Beta(2-a,a)-coalescent 
+(or the growth parameter of exponential population growth), and  h is theta, the scaled mutation rate.  See the specifications in the python script
+clambdapoints.py.    A specified number of datapoints is written to file labelled with the  corresponding parameter values.  The files can then be used 
+for further processing.   The python script is configured to run parallel simulations on computers with multiple CPUs.  
