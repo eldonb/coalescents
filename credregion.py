@@ -28,7 +28,7 @@ positions = np.vstack([ xx.ravel(), yy.ravel()])
 values = np.vstack([x,y])
 kernel = st.gaussian_kde(values)
 f = np.reshape(kernel(positions).T, xx.shape)
-f = f/np.max(f)
+
 
 del data, x,y, values, kernel
 
@@ -47,7 +47,7 @@ y = data[:, 1]
 values = np.stack([x,y])
 kernel = st.gaussian_kde(values)
 g = np.reshape(kernel(positions).T, xx.shape)
-g = g/np.max(g)
+
 
 
 fig = pl.figure()
